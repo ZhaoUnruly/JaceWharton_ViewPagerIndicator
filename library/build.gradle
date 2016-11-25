@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+
+android {
+    // 更改以下版本号
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    // 我们需要把原先的那个删除导入最新的这个v7包
+    compile 'com.android.support:appcompat-v7:24.2.1'
+}
